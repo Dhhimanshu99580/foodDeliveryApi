@@ -1,10 +1,9 @@
 
 package com.foodDeliveryApi.foodDeliveryApi.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Organization {
@@ -12,6 +11,8 @@ public class Organization {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    @OneToMany(mappedBy = "organization")
+    private List<Pricing> pricing;
 
     public int getId() {
         return id;

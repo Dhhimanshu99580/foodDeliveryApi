@@ -1,9 +1,8 @@
 package com.foodDeliveryApi.foodDeliveryApi.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Item {
@@ -12,6 +11,8 @@ public class Item {
     private int id;
     private String type;
     private String description;
+    @OneToMany(mappedBy = "item")
+    private List<Pricing> pricing;
 
     public int getId() {
         return id;
