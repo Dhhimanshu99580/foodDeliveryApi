@@ -20,7 +20,7 @@ public class Pricing {
     private Item item;
     @Setter
     private String zone;
-    private double base_distance_in_km;
+    private double base_distance_in_km=5;
     private final double km_price = 1.5;
     private final int fix_price = 10;
 
@@ -31,6 +31,7 @@ public class Pricing {
     public void setOrganization(Organization organization) {
         this.organization = organization;
     }
+
 
     @Override
     public String toString() {
